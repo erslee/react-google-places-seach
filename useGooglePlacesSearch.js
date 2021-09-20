@@ -8,7 +8,7 @@ export const useGooglePlacesSearch = ({
     apiOptions = {},
     autocompletionRequest = {},
     debounce = 300,
-    minLengthAutocomplete = 0,
+    minLengthAutocomplete = 1,
     // selectProps = {},
     onLoadFailed = console.error,
     withSessionToken = false,
@@ -19,8 +19,14 @@ export const useGooglePlacesSearch = ({
     const [places, setPlaces] = useState([]);
 
     const autocomplete =  _.debounce((value) => {
-        if (!placesService) return;
-        if (value.length < minLengthAutocomplete) return;
+        if (!placesService) {
+            setLoading(false);
+            return;
+        }
+        if (value.length < minLengthAutocomplete) {
+            setLoading(false);
+            return;
+        }
         setLoading(true);
 
         const autocompletionReq = { ...autocompletionRequest };

@@ -72,5 +72,5 @@ export const useGooglePlacesSearch = ({
         else initializeService();
     }, []);
 
-    return {places, autocomplete, loading, serviceStatus };
+    return [{places, loading, serviceStatus }, autocomplete];
 };

@@ -18,7 +18,7 @@ import React from 'react';
 import useGooglePlacesSearch from '@erslee/react-google-places-search';
 
 const Component = () => (
-const [values, autocomplete] = useGooglePlacesSearch({
+const [{ places, loading, serviceStatus }, autocomplete] = useGooglePlacesSearch({
     apiKey: '***'
   });
 
@@ -31,7 +31,7 @@ const [values, autocomplete] = useGooglePlacesSearch({
   return (
     <div className="App">
       <input onChange={handleInput} />
-      {values && values.map(item => <li>item.label</li>)}
+      {places && places.map(item => <li>item.label</li>)}
     </div>
   );
 );

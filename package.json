@@ -1,6 +1,6 @@
 {
   "name": "@erslee/react-google-places-seach",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Google places autocomplete hook for ReactJS.",
   "main": "index.js",
   "scripts": {

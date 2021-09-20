@@ -1,0 +1,26 @@
+{
+  "name": "@erslee/react-google-places-seach",
+  "version": "1.0.1",
+  "description": "Google places autocomplete hook for ReactJS.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/erslee/react-google-places-seach"
+  },
+  "keywords": [
+    "react",
+    "google",
+    "places",
+    "autocomplete",
+    "hook"
+  ],
+  "author": "erslee",
+  "license": "ISC",
+  "dependencies": {
+    "@googlemaps/js-api-loader": "^1.12.3",
+    "loadsh": "^0.0.4"
+  }
+}

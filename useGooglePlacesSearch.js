@@ -15,11 +15,13 @@ export const useGooglePlacesSearch = ({
 }) => {
     const [placesService, setPlacesService] = useState(undefined);
     const [sessionToken, setSessionToken] = useState(undefined);
+    const [loading, setLoading] = useState(false);
     const [places, setPlaces] = useState([]);
 
     const autocomplete =  _.debounce((value) => {
         if (!placesService) return;
         if (value.length < minLengthAutocomplete) return;
+        setLoading(true);
 
         const autocompletionReq = { ...autocompletionRequest };
 
@@ -30,6 +32,7 @@ export const useGooglePlacesSearch = ({
                 withSessionToken && sessionToken,
             ), (suggestions) => {
                 setPlaces((suggestions || []).map(suggestion => ({ label: suggestion.description, value: suggestion })));
+                setLoading(false);
             },
         );
     }, debounce)
@@ -59,5 +62,5 @@ export const useGooglePlacesSearch = ({
         else initializeService();
     }, []);
 
-    return [places, autocomplete, sessionToken, setSessionToken];
+    return [places, autocomplete, loading, sessionToken, setSessionToken];
 };

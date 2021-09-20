@@ -1,6 +1,6 @@
 {
   "name": "@erslee/react-google-places-seach",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Google places autocomplete hook for ReactJS.",
   "main": "index.js",
   "scripts": {
@@ -21,6 +21,6 @@
   "license": "ISC",
   "dependencies": {
     "@googlemaps/js-api-loader": "^1.12.3",
-    "loadsh": "^0.0.4"
+    "lodash": "^4.17.21"
   }
 }

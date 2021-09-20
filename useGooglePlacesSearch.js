@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { requestBuilder } from './helpers/requestBuilder';
 import { Loader } from '@googlemaps/js-api-loader';
-import _ from 'loadsh';
+import _ from 'lodash';
 
 export const useGooglePlacesSearch = ({
     apiKey = '',
